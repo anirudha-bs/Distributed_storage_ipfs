@@ -48,6 +48,17 @@ def ipfs_get():
     get_file(hash)
     print("The file has been stored at res.txt ")
 
+def sim_block():
+    print("Go to Blockchain_simulator directory and start the simulator by running go run .")
+    path = "Blockchain_simulator/blocks.txt"
+    p_time = os.stat(path).st_mtime
+    while(1):
+        if os.stat(path).st_mtime > p_time:
+            p_time = os.stat(path).st_mtime
+            res = add(path)
+            print("New block detected , file updated in ipfs")
+            print(res)
+
 def default():
     return "Please select a valid option"
 
@@ -56,14 +67,15 @@ switcher = {
         2: ipfs_add,
         3: decrypt_ipfs,
         4: ipfs_get,
+        5: sim_block,
         }
 
 if __name__ == "__main__":
 
     while(1):
-        print("\nDistributed storage\n -------Menu------ \n 1. Encrypt file and add to IPFS \n 2. Add file to ipfs without encryption \n 3. Decrypt a file from IPFS \n 4. Get file from IPFS \n 5. Exit \n")
+        print("\nDistributed storage\n -------Menu------ \n 1. Encrypt file and add to IPFS \n 2. Add file to ipfs without encryption \n 3. Decrypt a file from IPFS \n 4. Get file from IPFS \n 5. Simulate blockchain and add blocks to IPFS \n 6. Exit \n")
         option = int(input())
         switch(option)
-        if option==5:
+        if option==6:
             break
         
