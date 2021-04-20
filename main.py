@@ -18,6 +18,8 @@ def encrypt_ipfs_add():
     encrypt(file,key)
     #returns file details added to ipfs
     res = add(file)
+    #pinning the file to mark it important
+    pin(file)
     print("Encrpted file was added to ipfs")
     print(res)
 
@@ -25,6 +27,8 @@ def encrypt_ipfs_add():
 def ipfs_add():
     file=input("Enter the file name to be added - ")
     res = add(file)
+    #pinning the file to mark it important
+    pin(file)
     print("The file was added to ipfs")
     print(res)
 
