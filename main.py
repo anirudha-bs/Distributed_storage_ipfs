@@ -21,7 +21,12 @@ def encrypt_ipfs_add():
     #pinning the file to mark it important
     pin(file)
     print("Encrpted file was added to ipfs")
-    print(res)
+    try:
+        f = open("ipfs_files","a")
+        f.write("{} - {}\n".format(file, res))
+    except:
+        print("IO error")
+    print("File added to IPFS - " + res + "\nThe filename and CID is stored in a file named IPFS_files for future references" )
 
 
 def ipfs_add():
