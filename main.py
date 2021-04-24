@@ -19,14 +19,13 @@ def encrypt_ipfs_add():
     #returns file details added to ipfs
     res = add(file)
     #pinning the file to mark it important
-    pin(file)
     print("Encrpted file was added to ipfs")
     try:
         f = open("ipfs_files","a")
-        f.write("{} - {}\n".format(file, res))
+        f.write("{} - {}\n".format(file, str(res)))
     except:
         print("IO error")
-    print("File added to IPFS - " + res + "\nThe filename and CID is stored in a file named IPFS_files for future references" )
+    print("File added to IPFS - " + str(res) + "\nThe filename and CID is stored in a file named IPFS_files for future references" )
 
 
 def ipfs_add():
@@ -59,7 +58,7 @@ def ipfs_get():
 
 def sim_block():
     print("Go to Blockchain_simulator directory and start the simulator by running go run .")
-    path = "Blockchain_simulator/blocks.txt"
+    path = "blockchain_simulator/blocks.txt"
     p_time = os.stat(path).st_mtime
     while(1):
         if os.stat(path).st_mtime > p_time:
