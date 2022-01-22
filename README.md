@@ -1,6 +1,5 @@
 # Distributed_storage_ipfs
-A secure way of adding files and retriving them from the IPFS network.
-This application also supports one to add newly generated blocks of data using the inbuilt blockchain simulator to add the longest chain to the IPFS network
+A secure way of adding files, managing blockchain and retriving them from the IPFS network.
 
 To use file storage application- 
 ```
